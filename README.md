@@ -11,3 +11,5 @@ talk about the future phase 4 and 5, and possibly using LLMs. Might do it when f
 Call if anyone wanna contribute (e.g. a new environment/better reward function for the existing ones, feel free to do a pull request)
 
 Put extra render of the seperatist and republic logo, maybe planet logo also in the simulation
+
+I spend many weeks watching pixels move around - not good for my sanity
