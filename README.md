@@ -1,4 +1,7 @@
 # 35.-Star-Wars-Reinforcement-Learning
+<p align="center"> 
+  <img width="777" height="500" alt="image" src="https://github.com/user-attachments/assets/a5d5d50d-11c9-4830-abb4-a4ae46c4f4b2" />
+</p>
 
 its less on the RL algorithms, but more on learning how to design a good RL Environment (such as the reward functions, etc.)
 
