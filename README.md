@@ -1,4 +1,4 @@
-# 35.-Star-Wars-Reinforcement-Learning
+8# 35.-Star-Wars-Reinforcement-Learning
 <p align="center"> 
   <img width="777" height="500" alt="image" src="https://github.com/user-attachments/assets/a5d5d50d-11c9-4830-abb4-a4ae46c4f4b2" />
 </p>
@@ -38,3 +38,4 @@ Tried to get RepublicShips visible to potentially encourage emergent behaviour (
 
 I spend many weeks watching pixels move around - not good for my sanity
 
+slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
