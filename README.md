@@ -14,6 +14,8 @@ Solution:
 
 As you could see, I believe there is alot of possible improvements and expansion on this project (could be applied to space travel or similar fields of work) to simulate different scenarios. So I open to anyone who willing to contribute new scenarios and the learned policies.
 
+Currently the NPC ships, particularly the SeparatistShips are moving at half the speed of the RL agent, making it very easy for the RL agent to outmaneouvre them. I believe if we make them move at the same speed as the RL agent, it will force the RL agent to learn very different policies (and definitely will take longer/more iterations to train) (which I do not have the luxury of since Im running all this on my local laptop and each training process takes me 30 minutes)
+
 But, I will open this phenomenon to your interpretation and future experiments.
 
 
