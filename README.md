@@ -12,8 +12,6 @@ Solution:
 - or i could give a big reward for the RL agent if it finds all planets. However, I didnt want to do it because it dosent make sense as the RL agent isnt supposed to know how many planets there are in the map, and the objective is supposedly to try its best to find as many planets as possible.
 - one more rationale is that we could still give the RL agent a big reward for finding all planets, if it has already seen all parts of the map (since if it has already seen all parts of the map, then it make sense that we should already know how many planets there are in the area and thus we should know if all planets has already been found)
 
-Currently
-
 As you could see, I believe there is alot of possible improvements and expansion on this project (could be applied to space travel or similar fields of work) to simulate different scenarios. So I open to anyone who willing to contribute new scenarios and the learned policies.
 
 But, I will open this phenomenon to your interpretation and future experiments.
