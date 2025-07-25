@@ -20,6 +20,8 @@ Currently the NPC ships, particularly the SeparatistShips are moving at half the
 
 But, I will open this phenomenon to your interpretation and future experiments.
 
+Sorry the logs and saved RL models are really messy... I didnt manage to spend the time to organise them. But I did highlight the key RL models through which their policy/behaviour helped me to formulate the reward function to finding the best policy in that environment.
+
 I didnt have the luxury to test the environments with other RL algorithms, but let me know if anyone did (though I assume they should more or less work similarly in finding the planets (since thats the ultimate goal in the various scenarios with slight differences in cumulative rewards)). Since in all my experiments i just used SB3's PPO only. 
 
 talk about the future phase 4 and 5, and possibly using LLMs. Might do it when free 
