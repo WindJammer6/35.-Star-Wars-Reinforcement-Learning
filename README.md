@@ -31,7 +31,7 @@ Call if anyone wanna contribute (e.g. a new environment/better reward function f
 Put extra render of the seperatist and republic logo, maybe planet logo also in the simulation
 
 
-Tried to get RepublicShips visible to potentially encourage emergent behaviour... but not sure if it works (t encourage high level policies arising from emergent behaviour such as kiting, camping near RepublicShips so they will take agro from SeperatistShips to maximise its rewards if the RL agent 'sees' a RepublicShip. 
+Tried to get RepublicShips visible to potentially encourage emergent behaviour (not reward-driven)... but not sure if it works (to encourage high level policies arising from emergent behaviour such as kiting, camping near RepublicShips so they will take agro from SeperatistShips to maximise its rewards if the RL agent 'sees' a RepublicShip). 
 
 I spend many weeks watching pixels move around - not good for my sanity
 
