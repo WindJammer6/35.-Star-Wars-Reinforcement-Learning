@@ -47,6 +47,8 @@ say I tested these methods to get the best policy:
 - vectorising of RL Environment and normalising of rewards
 - rl algorithm hyperparaneter tuning 
 
+phase 4 and 5 is coming soon!
+
 
 ## Results
 
