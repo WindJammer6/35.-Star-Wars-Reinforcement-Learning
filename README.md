@@ -40,6 +40,13 @@ I spend many weeks watching pixels move around - not good for my sanity
 
 slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
 
+make a video collage of all the environments in a row (all 5)
+
+say I tested these methods to get the best policy:
+- reward function tuning (adding new types of rewards, and adjusting their magnitude)
+- vectorising of RL Environment and normalising of rewards
+- rl algorithm hyperparaneter tuning 
+
 
 ## Results
 
