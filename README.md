@@ -14,7 +14,7 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
 4. [Development Process](#development)
     1. [Phase 1 - Explore Planets](#phase1)
     2. [Phase 2 - War](#phase2)
-    3. [Phase 3 - Hostile Planets](#phase3)
+    3. [Phase 3 - Hostile Planets and Hive Mind](#phase3)
     4. [Phase 4 - Multi-drones](#phase4)
     5. [Phase 5 - Bounty Hunter](#phase5) 
 5. [Results](#results)
@@ -59,19 +59,25 @@ Each scenario is created as a seperate RL Environment, which I termed as a 'phas
 I spend weeks watching pixels move around - honestly not good for my sanity.
 
 ### Phase 1 - Explore Planets <a name = "phase1"></a>
-
+Baseline RL Environment.
 
 ### Phase 2 - War <a name = "phase2"></a>
+There's obstacles now.
 
-
-### Phase 3 - Hostile Planets <a name = "phase3"></a>
-
+### Phase 3 - Hostile Planets and Hive Mind<a name = "phase3"></a>
+Even more obstacles. Hive Mind feature involves implementing Meta-Epsiodes in RL.
 
 ### Phase 4 - Multi-drones <a name = "phase4"></a>
+Implements Multi-agent collaboration in RL.
 -- Coming soon! --
 
+- Inspired by this OpenAI article: https://openai.com/index/emergent-tool-use/
+
 ### Phase 5 - Bounty Hunter <a name = "phase5"></a> 
+Implements Adversarial agents competition in RL.
 -- Coming soon! --
+
+- Inspired by the AI Warehouse Youtube channel: https://www.youtube.com/@aiwarehouse
 
 <br>
 
@@ -91,6 +97,7 @@ LLMs?
 <br>
 
 ## Want to Contribute? <a name = "contribute"></a> 
+
 
 FOr phase 3, NPC ships are regenerated cuz by the time the explorers decide to send a new drone, the state of the war could be different and new ships will occupy the area so yea.
 
