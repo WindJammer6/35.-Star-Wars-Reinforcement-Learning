@@ -19,7 +19,7 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
     5. [Phase 5 - Bounty Hunter](#phase5) 
 5. [Results](#results)
 6. [Future Directions](#future)
-7. [Want to Contribute?](#contribute)
+7. [Spark any ideas?](#ideas)
 
 <br>
 
@@ -98,8 +98,9 @@ LLMs?
 
 <br>
 
-## Want to Contribute? <a name = "contribute"></a> 
+## Spark any ideas? <a name = "ideas"></a> 
 
+Have an idea of a Star Wars themed RL Environment? Make it and let me know if you would like to collaborate!
 
 FOr phase 3, NPC ships are regenerated cuz by the time the explorers decide to send a new drone, the state of the war could be different and new ships will occupy the area so yea.
 
