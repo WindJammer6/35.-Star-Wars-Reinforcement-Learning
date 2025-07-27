@@ -1,22 +1,93 @@
-# 35.-Star-Wars-Reinforcement-Learning
+# 35.-Star-Wars-Reinforcement-Learning ⭐🔫
 <p align="center"> 
   <img width="777" height="500" alt="image" src="https://github.com/user-attachments/assets/a5d5d50d-11c9-4830-abb4-a4ae46c4f4b2" />
 </p>
 
 A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
 
-## Storyline (for all of yall nerds)
-You're a neutral
+<br>
 
-## What is Star Wars Reinforcement Learning?
-Finding the best policy for a Reinforcement Learning (RL) agent in a series of RL Environments to explore as many planets as possible
+## Table of Contents
+1. [Storyline](#storyline)
+2. [What is Star Wars Reinforcement Learning?](#what)
+3. [How to Run?](#run)
+4. [Development Process](#development)
+    1. [Phase 1 - Explore Planets](#phase1)
+    2. [Phase 2 - War](#phase2)
+    3. [Phase 3 - Hostile Planets](#phase3)
+    4. [Phase 4 - Multi-drones](#phase4)
+    5. [Phase 5 - Bounty Hunter](#phase5) 
+5. [Results](#results)
+6. [Future Directions](#future)
+7. [Want to Contribute?](#contribute)
 
-## Storyline (for all of yall nerds)
+<br>
 
-its less on the RL algorithms, but more on learning how to design a good RL Environment (such as the reward functions, etc.)
+## Storyline (for all of yall nerds) <a name = "storyline"></a> 
+<p align="center"> 
+  <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/6de2cc6f-c804-4eb5-9a72-c655e9b9b389" />
+</p>
+You're a neutral planet explorer from Corusant in the Star Wars universe, looking to discover planets to work with in the unexplored Outer Rim by sending out drones (the RL agents). You seek to find the best ways to explore as many planets as possible with a restricted amount of fuel in your drones to maximise efficiency.
 
-Relatively simple environment
+Along the way, your drones encounter various obstacles and conflicts in the Outer Rim, but like any resilient explorer, you are determined to overcome them to achieve your objectives.
 
+<br>
+
+## What is Star Wars Reinforcement Learning? <a name = "what"></a> 
+Finding the best policy for a Reinforcement Learning (RL) agent in a series of different RL Environments with the ultimate objective to explore as many planets as possible. 
+
+This project is less on the RL algorithms itself, but more on learning how to design a good RL Environments (i.e. design of reward functions, MDP, etc.). The RL Environments in this project are relatively simple, in a grid world style.
+
+The RL Enviornments are all custom made [Gymnasium](https://gymnasium.farama.org/) RL Environments by me, designed as Partially Observable Markov Decision Processes (POMDP), each with their own state space, observation space and reward functions (their action spaces are the same). I used [Stable Baselines 3](https://stable-baselines.readthedocs.io/en/master/index.html)'s Proximal Policy Optimisation (PPO) as the RL algorithm for all the RL Environments.
+
+**Technology stack used:**
+- Farama Foundation's Gymnasium (https://gymnasium.farama.org/) ([OpenAI Gym's](https://www.gymlibrary.dev/) successor) (used to create the RL Environment)
+- Stable Baselines 3 (https://stable-baselines.readthedocs.io/en/master/index.html) (used for quick implementation of DRL algorithms)
+- Python
+
+<br>
+
+## How to Run? <a name = "run"></a> 
+Each scenario is created as a seperate RL Environment, which I termed as a 'phase'. Each phase is stored in its respective folder. Play with the 'main.ipynb' file to try out the RL Environments!
+
+<br>
+
+## Development Process <a name = "development"></a> 
+I spend weeks watching pixels move around - honestly not good for my sanity.
+
+### Phase 1 - Explore Planets <a name = "phase1"></a>
+
+
+### Phase 2 - War <a name = "phase2"></a>
+
+
+### Phase 3 - Hostile Planets <a name = "phase3"></a>
+
+
+### Phase 4 - Multi-drones <a name = "phase4"></a>
+-- Coming soon! --
+
+### Phase 5 - Bounty Hunter <a name = "phase5"></a> 
+-- Coming soon! --
+
+<br>
+
+## Results <a name = "results"></a> 
+
+
+<br>
+
+## Future Directions
+Application to real life - tackles the problem, with limited resources (fuel, determined by time of mission/episode), what is the best/optimal way to clear as many objectives (find as many planets) as possible?
+
+My hypothesis:
+Given limited fuel and a vast space, the RL agent could only explore a limited section of the vast space, hence it learns that policy (it somehow converged to only look at the left 60% region of the map) to find the most planets possible
+
+LLMs?
+
+<br>
+
+## Want to Contribute? <a name = "contribute"></a> 
 
 FOr phase 3, NPC ships are regenerated cuz by the time the explorers decide to send a new drone, the state of the war could be different and new ships will occupy the area so yea.
 
@@ -46,8 +117,6 @@ Put extra render of the seperatist and republic logo, maybe planet logo also in 
 
 Tried to get RepublicShips visible to potentially encourage emergent behaviour (not reward-driven, since I dont reward the RL agent from being near a RepublicShip, I merely allowed it to 'see' them in its vision)... but not sure if it works (to encourage high level policies arising from emergent behaviour such as kiting, camping near RepublicShips so they will take agro from SeperatistShips to maximise its rewards if the RL agent 'sees' a RepublicShip). 
 
-I spend many weeks watching pixels move around - not good for my sanity
-
 slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
 
 make a video collage of all the environments in a row (all 5)
@@ -58,11 +127,4 @@ say I tested these methods to get the best policy:
 - rl algorithm hyperparaneter tuning 
 
 phase 4 and 5 is coming soon!
-
-
-## Results
-
-## Development Process
-
-## Want to Contribute?
 
