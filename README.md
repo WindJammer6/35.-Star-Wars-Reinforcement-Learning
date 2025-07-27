@@ -69,12 +69,14 @@ Even more obstacles. Hive Mind feature involves implementing Meta-Epsiodes in RL
 
 ### Phase 4 - Multi-drones <a name = "phase4"></a>
 Implements Multi-agent collaboration in RL.
+
 -- Coming soon! --
 
 - Inspired by this OpenAI article: https://openai.com/index/emergent-tool-use/
 
 ### Phase 5 - Bounty Hunter <a name = "phase5"></a> 
 Implements Adversarial agents competition in RL.
+
 -- Coming soon! --
 
 - Inspired by the AI Warehouse Youtube channel: https://www.youtube.com/@aiwarehouse
