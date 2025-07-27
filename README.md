@@ -3,10 +3,15 @@
   <img width="777" height="500" alt="image" src="https://github.com/user-attachments/assets/a5d5d50d-11c9-4830-abb4-a4ae46c4f4b2" />
 </p>
 
-A Star Wars geek and a Machine Learning enthusiast - you get this project.
+A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
+
+## Storyline (for all of yall nerds)
+You're a neutral
 
 ## What is Star Wars Reinforcement Learning?
-A series of RL Environments
+Finding the best policy for a Reinforcement Learning (RL) agent in a series of RL Environments to explore as many planets as possible
+
+## Storyline (for all of yall nerds)
 
 its less on the RL algorithms, but more on learning how to design a good RL Environment (such as the reward functions, etc.)
 
