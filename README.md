@@ -138,3 +138,5 @@ say I tested these methods to get the best policy:
 - reward function tuning (adding new types of rewards, and adjusting their magnitude)
 - vectorising of RL Environment and normalising of rewards
 - rl algorithm hyperparaneter tuning 
+
+should probably do reward cumulative graph as results... but I nvr focus on logging so I don't have... how I tell the algorithm is improving is solely by visually seeing the simulation (I know it's not the best way and seeing the reward convergence graph usually is the right way, but screw it, I'm just gonna stick to this cuz I no time study graphs and abit laze)
