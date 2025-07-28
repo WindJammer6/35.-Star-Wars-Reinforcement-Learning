@@ -23,7 +23,7 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
 
 <br>
 
-## Storyline (for all of yall nerds) <a name = "storyline"></a> 
+## Storyline (for all of yall fellow nerds) <a name = "storyline"></a> 
 <p align="center"> 
   <img width="777" height="500 alt="image" src="https://github.com/user-attachments/assets/10a028ea-bc02-4add-b706-5e501f264250" />
 </p>
