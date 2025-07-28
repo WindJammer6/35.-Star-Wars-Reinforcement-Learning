@@ -140,3 +140,5 @@ say I tested these methods to get the best policy:
 - rl algorithm hyperparaneter tuning 
 
 should probably do reward cumulative graph as results... but I nvr focus on logging so I don't have... how I tell the algorithm is improving is solely by visually seeing the simulation (I know it's not the best way and seeing the reward convergence graph usually is the right way, but screw it, I'm just gonna stick to this cuz I no time study graphs and abit laze)
+
+for the results section, unfortunately I didn't spend to time to keep the reward function consistent and for benchmarkin, so I can't really show you the improvements and convergence... but I can show you that these RL Environments works and gives RL agent the right signals to learn good/expected policies to achieve the objective (the videos serve as the resulting proof) (can't show reward numerical proof unfortunately) 
