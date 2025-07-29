@@ -152,7 +152,8 @@ I believe there is a lot of possible improvements and expansion on this project 
 - Most obviously, space travel (or any similar fields of work)
 - Since the idea behind this project is,
   <p align="center"> 
-    With limited resources (fuel, determined by time of mission/episode), what is the best/optimal way to clear as many objectives (find as many planets) as possible?
+    **With limited resources (fuel, determined by time of mission/episode),**
+    **what is the best/optimal way to clear as many objectives (find as many planets) as possible?**
   </p>
   it investigates a new perspective on how to tackle this age-old problem with Reinforcement Learning.
 
