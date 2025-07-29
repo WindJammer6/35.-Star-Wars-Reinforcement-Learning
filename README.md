@@ -8,8 +8,8 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
 <br>
 
 ## Table of Contents
-1. [Storyline](#storyline)
-2. [What is Star Wars Reinforcement Learning?](#what)
+1. [What is Star Wars Reinforcement Learning?](#what)
+2. [Storyline](#storyline)
 3. [How to Run?](#run)
 4. [Development Process](#development)
     1. [Phase 1 - Explore Planets](#phase1)
@@ -19,7 +19,29 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
     5. [Phase 5 - Bounty Hunter](#phase5) 
 5. [Results](#results)
 6. [Future Directions](#future)
-7. [Spark any ideas?](#ideas)
+7. [Limitations of the project](#limitations)
+8. [Spark any ideas?](#ideas)
+
+<br>
+
+## What is Star Wars Reinforcement Learning? <a name = "what"></a> 
+
+slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
+
+make a video collage of all the environments in a row (all 5)
+
+
+
+Finding the best policy for a Reinforcement Learning (RL) agent in a series of different RL Environments with the ultimate objective to explore as many planets as possible. 
+
+This project is less on the RL algorithms itself, but more on learning how to design good RL Environments (i.e. design of reward functions, MDP, etc.). The RL Environments in this project are relatively simple, in a grid world style.
+
+The RL Enviornments are all custom made [Gymnasium](https://gymnasium.farama.org/) RL Environments by me, designed as Partially Observable Markov Decision Processes (POMDP), each with their own state space, observation space and reward functions (their action spaces are the same). I used [Stable Baselines 3](https://stable-baselines.readthedocs.io/en/master/index.html)'s Proximal Policy Optimisation (PPO) as the RL algorithm for all the RL Environments.
+
+**Technology stack used:**
+- Farama Foundation's Gymnasium (https://gymnasium.farama.org/) ([OpenAI Gym's](https://www.gymlibrary.dev/) successor) (used to create the RL Environment)
+- Stable Baselines 3 (https://stable-baselines.readthedocs.io/en/master/index.html) (used for quick implementation of DRL algorithms)
+- Python
 
 <br>
 
@@ -34,19 +56,6 @@ You're a neutral planet explorer from Corusant, looking to discover planets to w
 
 Along the way, your drones encounter various obstacles and conflicts in the Outer Rim, but like any resilient explorer, you are determined to overcome them to achieve your objectives.
 
-<br>
-
-## What is Star Wars Reinforcement Learning? <a name = "what"></a> 
-Finding the best policy for a Reinforcement Learning (RL) agent in a series of different RL Environments with the ultimate objective to explore as many planets as possible. 
-
-This project is less on the RL algorithms itself, but more on learning how to design good RL Environments (i.e. design of reward functions, MDP, etc.). The RL Environments in this project are relatively simple, in a grid world style.
-
-The RL Enviornments are all custom made [Gymnasium](https://gymnasium.farama.org/) RL Environments by me, designed as Partially Observable Markov Decision Processes (POMDP), each with their own state space, observation space and reward functions (their action spaces are the same). I used [Stable Baselines 3](https://stable-baselines.readthedocs.io/en/master/index.html)'s Proximal Policy Optimisation (PPO) as the RL algorithm for all the RL Environments.
-
-**Technology stack used:**
-- Farama Foundation's Gymnasium (https://gymnasium.farama.org/) ([OpenAI Gym's](https://www.gymlibrary.dev/) successor) (used to create the RL Environment)
-- Stable Baselines 3 (https://stable-baselines.readthedocs.io/en/master/index.html) (used for quick implementation of DRL algorithms)
-- Python
 
 <br>
 
@@ -63,7 +72,7 @@ Generally, to get the RL agents to learn the best policy in each phase, I played
 - Vectorising of the RL Environment and Normalisation of rewards
 - RL algorithm hyperparaneter tuning
 
-For each phase, I trained a 500k iterations PPO DRL algorithm and a 1M iterations PPO DRL algorithm. Try them out!
+For each phase, I trained a 500k iterations PPO DRL algorithm and a 1M iterations PPO DRL algorithm. Try them out! (Each 500k takes me 30 minutes to train since I'm running all this on my local laptop 😢)
 
 In this section, I will give a rough explanation of my thought processes in developing each phase, for more details (i.e. about the MDP) see each phase's 'main.ipynb'.
 
@@ -87,7 +96,7 @@ Started simple with a prey-predator situation, with the Separatists ships as the
 
 They move at the same speed as the RL agent initially, but I quickly realised it took too long for the RL agent to learn since it was too difficult, hence I halved their speeds.
 
-Simple reward function of, if a Separatists ship is adjacent to the RL agent, the RL agent will be penalised/takes damage.
+Simple reward function of, if a Separatists ship is adjacent to the RL agent, the RL agent will be penalised/takes damage. Later improved it as I realised the reward function was too sparse, and to make the reward signals denser, introduced the idea of the planets emitting a positive reward halo (across the map, decays with distance) once it enters the vision of the RL agent, and the idea of visited planets emitting a negative reward halo (also across the map, decays with distance) to discourage RL agents from camping.
 
 I introduced Republic Ships in hopes of encouraging emergent behaviour (not reward-driven, since I don't reward the RL agent from being near a Republic ship, I merely allowed it to 'see' them in its vision) where the RL agent learns more complex policies like 'kiting' i.e. learns to camp near Republic ships so they will take agro from incoming Seperatist ships to maximise its rewards if the RL agent 'sees' a Republic ship. (unfortunately I was not able to show this, likely requires much more iterations to learn)
 
@@ -99,6 +108,16 @@ I introduced Republic Ships in hopes of encouraging emergent behaviour (not rewa
 Started with randomly turning a portion of the planets into hostile planets, which emit a kill radius that kills any ship entering it. The RL agents does not know which plaents are hostile nor how big the kill radius are.
 
 To help them, I introduced the idea of a 'Hive Mind', where initial RL agents randomly explore until they get killed, and the 'Hive Mind' remembers the death locations, visited planets, and seen areas of the map of previous RL agents. Within sub-episodes, the map is not reset. (except for the Separatist and Republic ships since I wanted to simulate the idea that by the time the planet explorers decide to send a new RL agent/drone, the state of the war could be different and new ships will occupy different parts of the map)
+
+**The 'camp' at last planet issue**
+For Phase 3, there was an issue where the RL agent found a policy to 'camp' at the last planet to farm the rewards off its positive rewards halo rather than just visiting it. It likely didnt want to visit it because once it visits it, the planet (now visited) will emit a negative rewards halo, which penalises it. 
+
+Possible solutions:
+- could fix this by not making visited planets penalise the RL agent.
+- could give a big reward for the RL agent if it finds all planets. However, I didnt want to do it because it dosen't make sense as the RL agent isn't supposed to know how many planets there are in the map, and the objective is supposedly to try its best to find as many planets as possible.
+- one more rationale is that we could still give the RL agent a big reward for finding all planets, if it has already seen all parts of the map (since if it has already seen all parts of the map, then it make sense that we should already know how many planets there are in the area and thus we should know if all planets has already been found)
+
+But I will open this phenomenon to your interpretation of the RL Environment and future experiments.
 
 <br>
 
@@ -121,53 +140,39 @@ To help them, I introduced the idea of a 'Hive Mind', where initial RL agents ra
 <br>
 
 ## Results <a name = "results"></a> 
-
+My hypothesis:
+Given limited fuel and a vast space, the RL agent could only explore a limited section of the vast space, hence it learns that policy (it somehow converged to only look at the left 60% region of the map) to find the most planets possible
 
 <br>
 
 ## Future Directions <a name = "future"></a> 
-Application to real life - tackles the problem, with limited resources (fuel, determined by time of mission/episode), what is the best/optimal way to clear as many objectives (find as many planets) as possible?
+I believe there is a lot of possible improvements and expansion on this project to simulate different scenarios. 
 
-My hypothesis:
-Given limited fuel and a vast space, the RL agent could only explore a limited section of the vast space, hence it learns that policy (it somehow converged to only look at the left 60% region of the map) to find the most planets possible
+**Possible application to the real world**
+- Most obviously, space travel (or any similar fields of work)
+- Since the idea behind this project is,
+  <p align="center"> 
+    With limited resources (fuel, determined by time of mission/episode), what is the best/optimal way to clear as many objectives (find as many planets) as possible?
+  </p>
+  it investigates a new perspective on how to tackle this age-old problem with Reinforcement Learning.
 
-LLMs?
+**Further testing of the existing RL Environments**
+For example,
+- currently the NPC ships, particularly the Separatist ships, are moving at half the speed of the RL agent, making it very easy for the RL agent to outmaneouvre them. I believe if we make them move at the same speed as the RL agent, it will force the RL agent to learn very different policies (and definitely will take longer/more iterations to train) (which I do not have the luxury of since I'm running all this on my local laptop and each training process takes me 30 minutes)
+- test out the RL Enviroments with other RL algorithms (I didn't have the luxury to test the RL Environments with other RL algorithms, but let me know if you did (though I assume they should more or less work similarly in finding the planets (since thats the ultimate goal in the various scenarios with slight differences in cumulative rewards)). Since in all my experiments I just used Stable Baseline 3's PPO DRL algorithm only.
+
+**Integration of LLM?**
+
+<br>
+
+## Limitations of this project <a name = "limitations"></a> 
+In most RL papers, they do benchmarking via comparing the (numerical results) reward convergence/cumulative reward graphs as results between RL algorithms for different RL Environments... however, I wasn't able to do this. How I tell a RL model is improving is solely by visually seeing the simulation (I know it's not the best way and seeing the reward convergence graph usually is the right way but I didn't have the time to study graphs and abit laze 😆)
+
+I do have the logs for the learned policies of the RL models... perhaps will show case the reward convergence/cumulative reward graphs as results in the 'Results' section in the future.
+
+The only proof I can show you that these RL Environments works and gives RL agent the right signals to learn good/expected policies to achieve the objective is via the simulation rendering.
 
 <br>
 
 ## Spark any ideas? <a name = "ideas"></a> 
-
-Have an idea of a Star Wars themed RL Environment? Make it and let me know if you would like to collaborate!
-
-For Phase 3, also another issue is that the RL agent found a policy to 'camp' at the last planet to farm the rewards off its positive rewards halo rather than just visiting it. It likely didnt want to visit it because once it visits it the planet will emit a negative rewards halo, which penalises it. 
-
-Solution:
-- I maybe could fix this by not making visited planets penalise the RL agent.
-- or i could give a big reward for the RL agent if it finds all planets. However, I didnt want to do it because it dosent make sense as the RL agent isnt supposed to know how many planets there are in the map, and the objective is supposedly to try its best to find as many planets as possible.
-- one more rationale is that we could still give the RL agent a big reward for finding all planets, if it has already seen all parts of the map (since if it has already seen all parts of the map, then it make sense that we should already know how many planets there are in the area and thus we should know if all planets has already been found)
-
-As you could see, I believe there is alot of possible improvements and expansion on this project (could be applied to space travel or similar fields of work) to simulate different scenarios. So I open to anyone who willing to contribute new scenarios and the learned policies.
-
-Currently the NPC ships, particularly the SeparatistShips are moving at half the speed of the RL agent, making it very easy for the RL agent to outmaneouvre them. I believe if we make them move at the same speed as the RL agent, it will force the RL agent to learn very different policies (and definitely will take longer/more iterations to train) (which I do not have the luxury of since Im running all this on my local laptop and each training process takes me 30 minutes)
-
-But, I will open this phenomenon to your interpretation and future experiments.
-
-Sorry the logs and saved RL models are really messy... I didnt manage to spend the time to organise them. But I did highlight the key RL models through which their policy/behaviour helped me to formulate the reward function to finding the best policy in that environment.
-
-I didnt have the luxury to test the environments with other RL algorithms, but let me know if anyone did (though I assume they should more or less work similarly in finding the planets (since thats the ultimate goal in the various scenarios with slight differences in cumulative rewards)). Since in all my experiments i just used SB3's PPO only. 
-
-talk about the future phase 4 and 5, and possibly using LLMs. Might do it when free 
-
-Call if anyone wanna contribute (e.g. a new environment/better reward function for the existing ones, feel free to do a pull request)
-
-Put extra render of the seperatist and republic logo, maybe planet logo also in the simulation
-
-
-
-slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
-
-make a video collage of all the environments in a row (all 5)
-
-should probably do reward cumulative graph as results... but I nvr focus on logging so I don't have... how I tell the algorithm is improving is solely by visually seeing the simulation (I know it's not the best way and seeing the reward convergence graph usually is the right way, but screw it, I'm just gonna stick to this cuz I no time study graphs and abit laze)
-
-for the results section, unfortunately I didn't spend to time to keep the reward function consistent and for benchmarkin, so I can't really show you the improvements and convergence... but I can show you that these RL Environments works and gives RL agent the right signals to learn good/expected policies to achieve the objective (the videos serve as the resulting proof) (can't show reward numerical proof unfortunately) 
+Have an idea of a Star Wars-themed RL Environment? Open to anyone with new scenario ideas and their respective RL agent's learned policies, or a better reward function/learnd policies for the existing scenarios.
