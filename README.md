@@ -35,23 +35,6 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
   <img src="https://github.com/WindJammer6/35.-Star-Wars-Reinforcement-Learning/blob/main/images%20and%20videos/Phase%203%20(dev)%20(gif).gif"  width="350" height="200">
 </p>
 
-*Legend*  
-| Color               | Description                                   |
-|---------------------|-----------------------------------------------|
-| Black               | Starting position                             |
-| Grey                | RL agent                                      |
-| Yellow              | RL agent's vision                             |
-| Red-pink            | Parts of the map the RL agent has seen        |
-| Blue                | Republic Ship                                 |
-| Blue outline        | Republic Ship vision                          |
-| Red                 | Separatist Ship                               |
-| Red outline         | Separatist Ship's vision                      |
-| Light blue          | Planet                                        |
-| Green               | Visited Planet                                |
-| Orange              | Hostile Planet                                |
-| Orange outline      | Hostile Planet kill radius                    |
-| Pink                | RL agent destroyed location                   |
-
 Finding the best policy for a Reinforcement Learning (RL) agent in a series of different RL Environments with the ultimate objective to explore as many planets as possible. 
 
 This project is less on the RL algorithms itself, but more on learning how to design good RL Environments (i.e. design of reward functions, MDP, etc.). The RL Environments in this project are relatively simple, in a grid world style.
@@ -160,8 +143,51 @@ But I will open this phenomenon to your interpretation of the RL Environment and
 <br>
 
 ## Results <a name = "results"></a> 
-My hypothesis:
-Given limited fuel and a vast space, the RL agent could only explore a limited section of the vast space, hence it learns that policy (it somehow converged to only look at the left 60% region of the map) to find the most planets possible
+### Phase 1 - Explore Planets <a name = "phase1"></a>
+
+
+https://github.com/user-attachments/assets/e35d074c-5a28-485a-9526-d6802a10aba0
+
+
+
+
+<br>
+
+### Phase 2 - War <a name = "phase2"></a>
+
+
+https://github.com/user-attachments/assets/24e89f9d-c866-4227-bfee-a8a782edb981
+
+
+
+<br>
+
+### Phase 3 - Hostile Planets and Hive Mind<a name = "phase3"></a>
+
+
+https://github.com/user-attachments/assets/9c652053-fd08-40ae-ba2b-74fca894e1cf
+
+
+
+
+<br>
+
+*Legend*  
+| Color               | Description                                   |
+|---------------------|-----------------------------------------------|
+| Black               | Starting position                             |
+| Grey                | RL agent                                      |
+| Yellow              | RL agent's vision                             |
+| Red-pink            | Parts of the map the RL agent has seen        |
+| Blue                | Republic Ship                                 |
+| Blue outline        | Republic Ship vision                          |
+| Red                 | Separatist Ship                               |
+| Red outline         | Separatist Ship's vision                      |
+| Light blue          | Planet                                        |
+| Green               | Visited Planet                                |
+| Orange              | Hostile Planet                                |
+| Orange outline      | Hostile Planet kill radius                    |
+| Pink                | RL agent destroyed location                   |
 
 <br>
 
@@ -171,10 +197,10 @@ I believe there is a lot of possible improvements and expansion on this project 
 **Possible application to the real world**
 - Most obviously, space travel (or any similar fields of work)
 - Since the idea behind this project is,
-  <p align="center"> 
-    **With limited resources (fuel, determined by time of mission/episode),**
-    **what is the best/optimal way to clear as many objectives (find as many planets) as possible?**
-  </p>
+    <p align="center"> 
+      <strong>With limited resources (fuel, determined by time of mission/episode),</strong><br>
+      <strong>what is the best/optimal way to clear as many objectives (find as many planets) as possible?</strong>
+    </p>
   it investigates a new perspective on how to tackle this age-old problem with Reinforcement Learning.
 
 **Further testing of the existing RL Environments**
@@ -196,4 +222,4 @@ The only proof I can show you that these RL Environments works and gives RL agen
 <br>
 
 ## Spark any ideas? <a name = "ideas"></a> 
-Have an idea of a Star Wars-themed RL Environment? Open to anyone with new scenario ideas and their respective RL agent's learned policies, or a better reward function/learnd policies for the existing scenarios.
+Have an idea of a Star Wars-themed RL Environment? Open to anyone with new scenario ideas and their respective RL agent's learned policies, or a better reward function/learnd policies for the existing scenarios. Just send me a pull request!
