@@ -112,7 +112,9 @@ Started with randomly turning a portion of the planets into hostile planets, whi
 
 To help them, I introduced the idea of a 'Hive Mind', where initial RL agents randomly explore until they get killed, and the 'Hive Mind' remembers the death locations, visited planets, and seen areas of the map of previous RL agents. Within sub-episodes, the map is not reset. (except for the Separatist and Republic ships since I wanted to simulate the idea that by the time the planet explorers decide to send a new RL agent/drone, the state of the war could be different and new ships will occupy different parts of the map)
 
-**The 'camp' at last planet issue**
+Also, hostile planets initially produce the same positive reward halo upon discovery by the RL agent. But once a RL agent dies from its kill radius, the 'Hive Mind' knows it is a hostile planet and immediately marks it as a 'visited planet' and it will produce a negative reward halo to discourage future RL agents from going near it.
+
+**The 'camp' at last planet issue**  
 For Phase 3, there was an issue where the RL agent found a policy to 'camp' at the last planet to farm the rewards off its positive rewards halo rather than just visiting it. It likely didnt want to visit it because once it visits it, the planet (now visited) will emit a negative rewards halo, which penalises it. 
 
 Possible solutions:
