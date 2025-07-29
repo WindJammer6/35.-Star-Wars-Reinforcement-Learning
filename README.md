@@ -56,26 +56,63 @@ Each scenario is created as a seperate RL Environment, which I termed as a 'phas
 <br>
 
 ## Development Process <a name = "development"></a> 
-I spend weeks watching pixels move around - honestly not good for my sanity.
+**I spend weeks watching pixels move around - honestly not good for my sanity.**
+
+Generally, to get the RL agents to learn the best policy in each phase, I played with:
+- Reward function tuning (adding new types of rewards, and adjusting their magnitude)
+- Vectorising of the RL Environment and Normalisation of rewards
+- RL algorithm hyperparaneter tuning
+
+For each phase, I trained a 500k iterations PPO DRL algorithm and a 1M iterations PPO DRL algorithm. Try them out!
+
+In this section, I will give a rough explanation of my thought processes in developing each phase, for more details (i.e. about the MDP) see each phase's 'main.ipynb'.
+
+<br>
 
 ### Phase 1 - Explore Planets <a name = "phase1"></a>
-Baseline RL Environment.
+*The Baseline RL Environment.*
+
+Started simple with randomly generated planets in a fixed grid-world, giving the RL agent 4 discrete actions, and a reward function of just rewarding the RL agent if it visited a planet.
+
+Quickly realised this was too difficult, as it took an extremely long training time. Hence, I gave the RL agent 'vision' and 'memory' to help it learn faster.
+
+Did some additional fine tuning on the reward function since I noticed it kept getting stuck at corners, and staying at a fixed location.
+
+<br>
 
 ### Phase 2 - War <a name = "phase2"></a>
-There's obstacles now.
+*There's a war going on now.*
+
+Started simple with a prey-predator situation, with the Separatists ships as the 'predator' and the Republic ships as the 'prey'. They have their own vision, and initially the Separatists ships will chase both the RL agent or the Republic ship in view, while the Republic ship will flee when a Separatist ship is in view. I later introduced more stochasticity in the Separatist and Republic ships' behaviour (see the 'npc_ships.py' file). 
+
+They move at the same speed as the RL agent initially, but I quickly realised it took too long for the RL agent to learn since it was too difficult, hence I halved their speeds.
+
+Simple reward function of, if a Separatists ship is adjacent to the RL agent, the RL agent will be penalised/takes damage.
+
+I introduced Republic Ships in hopes of encouraging emergent behaviour (not reward-driven, since I don't reward the RL agent from being near a Republic ship, I merely allowed it to 'see' them in its vision) where the RL agent learns more complex policies like 'kiting' i.e. learns to camp near Republic ships so they will take agro from incoming Seperatist ships to maximise its rewards if the RL agent 'sees' a Republic ship. (unfortunately I was not able to show this, likely requires much more iterations to learn)
+
+<br>
 
 ### Phase 3 - Hostile Planets and Hive Mind<a name = "phase3"></a>
-Even more obstacles. Hive Mind feature involves implementing Meta-Epsiodes in RL.
+*Even more chaos (hostile planets) to the war. Hive Mind feature involves implementing Meta-Epsiodes in the RL Environment.*
+
+Started with randomly turning a portion of the planets into hostile planets, which emit a kill radius that kills any ship entering it. The RL agents does not know which plaents are hostile nor how big the kill radius are.
+
+To help them, I introduced the idea of a 'Hive Mind', where initial RL agents randomly explore until they get killed, and the 'Hive Mind' remembers the death locations, visited planets, and seen areas of the map of previous RL agents. Within sub-episodes, the map is not reset. (except for the Separatist and Republic ships since I wanted to simulate the idea that by the time the planet explorers decide to send a new RL agent/drone, the state of the war could be different and new ships will occupy different parts of the map)
+
+<br>
 
 ### Phase 4 - Multi-drones <a name = "phase4"></a>
-Implements Multi-agent collaboration in RL.
+*Implements Multi-agent collaboration in the RL Environment.*
 
 -- Coming soon! --
 
 - Inspired by this OpenAI article: https://openai.com/index/emergent-tool-use/
 
+<br>
+
 ### Phase 5 - Bounty Hunter <a name = "phase5"></a> 
-Implements Adversarial agents competition in RL.
+*Implements Adversarial agents competition in the RL Environment.*
 
 -- Coming soon! --
 
@@ -102,8 +139,6 @@ LLMs?
 
 Have an idea of a Star Wars themed RL Environment? Make it and let me know if you would like to collaborate!
 
-FOr phase 3, NPC ships are regenerated cuz by the time the explorers decide to send a new drone, the state of the war could be different and new ships will occupy the area so yea.
-
 For Phase 3, also another issue is that the RL agent found a policy to 'camp' at the last planet to farm the rewards off its positive rewards halo rather than just visiting it. It likely didnt want to visit it because once it visits it the planet will emit a negative rewards halo, which penalises it. 
 
 Solution:
@@ -128,16 +163,10 @@ Call if anyone wanna contribute (e.g. a new environment/better reward function f
 Put extra render of the seperatist and republic logo, maybe planet logo also in the simulation
 
 
-Tried to get RepublicShips visible to potentially encourage emergent behaviour (not reward-driven, since I dont reward the RL agent from being near a RepublicShip, I merely allowed it to 'see' them in its vision)... but not sure if it works (to encourage high level policies arising from emergent behaviour such as kiting, camping near RepublicShips so they will take agro from SeperatistShips to maximise its rewards if the RL agent 'sees' a RepublicShip). 
 
 slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
 
 make a video collage of all the environments in a row (all 5)
-
-say I tested these methods to get the best policy:
-- reward function tuning (adding new types of rewards, and adjusting their magnitude)
-- vectorising of RL Environment and normalising of rewards
-- rl algorithm hyperparaneter tuning 
 
 should probably do reward cumulative graph as results... but I nvr focus on logging so I don't have... how I tell the algorithm is improving is solely by visually seeing the simulation (I know it's not the best way and seeing the reward convergence graph usually is the right way, but screw it, I'm just gonna stick to this cuz I no time study graphs and abit laze)
 
