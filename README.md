@@ -203,7 +203,7 @@ I believe there is a lot of possible improvements and expansion on this project 
     </p>
   it investigates a new perspective on how to tackle this age-old problem with Reinforcement Learning.
 
-**Further testing of the existing RL Environments**
+**Further testing of the existing RL Environments**  
 For example,
 - currently the NPC ships, particularly the Separatist ships, are moving at half the speed of the RL agent, making it very easy for the RL agent to outmaneouvre them. I believe if we make them move at the same speed as the RL agent, it will force the RL agent to learn very different policies (and definitely will take longer/more iterations to train) (which I do not have the luxury of since I'm running all this on my local laptop and each training process takes me 30 minutes)
 - test out the RL Enviroments with other RL algorithms (I didn't have the luxury to test the RL Environments with other RL algorithms, but let me know if you did (though I assume they should more or less work similarly in finding the planets (since thats the ultimate goal in the various scenarios with slight differences in cumulative rewards)). Since in all my experiments I just used Stable Baseline 3's PPO DRL algorithm only.
