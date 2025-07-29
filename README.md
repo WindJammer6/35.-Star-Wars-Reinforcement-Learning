@@ -1,6 +1,10 @@
 # 35.-Star-Wars-Reinforcement-Learning ⭐🔫
 <p align="center"> 
-  <img width="777" height="500" alt="image" src="https://github.com/user-attachments/assets/a5d5d50d-11c9-4830-abb4-a4ae46c4f4b2" />
+
+
+https://github.com/user-attachments/assets/26c88294-88b0-424d-bc6f-2ba9be1ee8b5
+
+
 </p>
 
 A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
@@ -25,12 +29,28 @@ A Machine Learning enthusiast who is also a Star Wars nerd - hence this project.
 <br>
 
 ## What is Star Wars Reinforcement Learning? <a name = "what"></a> 
+<p align="center"> 
+  <img src="https://github.com/WindJammer6/35.-Star-Wars-Reinforcement-Learning/blob/main/images%20and%20videos/Phase%201%20(dev)%20(gif).gif"  width="350" height="200">
+  <img src="https://github.com/WindJammer6/35.-Star-Wars-Reinforcement-Learning/blob/main/images%20and%20videos/Phase%202%20(dev)%20(gif).gif"  width="350" height="200">
+  <img src="https://github.com/WindJammer6/35.-Star-Wars-Reinforcement-Learning/blob/main/images%20and%20videos/Phase%203%20(dev)%20(gif).gif"  width="350" height="200">
+</p>
 
-slow down the videos during demonstration, render the planets and ships with better UI and label the colouring what each of it mean
-
-make a video collage of all the environments in a row (all 5)
-
-
+*Legend*  
+| Color               | Description                                   |
+|---------------------|-----------------------------------------------|
+| Black               | Starting position                             |
+| Grey                | RL agent                                      |
+| Yellow              | RL agent's vision                             |
+| Red-pink            | Parts of the map the RL agent has seen        |
+| Blue                | Republic Ship                                 |
+| Blue outline        | Republic Ship vision                          |
+| Red                 | Separatist Ship                               |
+| Red outline         | Separatist Ship's vision                      |
+| Light blue          | Planet                                        |
+| Green               | Visited Planet                                |
+| Orange              | Hostile Planet                                |
+| Orange outline      | Hostile Planet kill radius                    |
+| Pink                | RL agent destroyed location                   |
 
 Finding the best policy for a Reinforcement Learning (RL) agent in a series of different RL Environments with the ultimate objective to explore as many planets as possible. 
 
