@@ -180,7 +180,7 @@ https://github.com/user-attachments/assets/9c652053-fd08-40ae-ba2b-74fca894e1cf
 | Yellow              | RL agent's vision                             |
 | Red-pink            | Parts of the map the RL agent has seen        |
 | Blue                | Republic Ship                                 |
-| Blue outline        | Republic Ship vision                          |
+| Blue outline        | Republic Ship's vision                        |
 | Red                 | Separatist Ship                               |
 | Red outline         | Separatist Ship's vision                      |
 | Light blue          | Planet                                        |
