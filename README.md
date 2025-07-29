@@ -127,6 +127,9 @@ But I will open this phenomenon to your interpretation of the RL Environment and
 ### Phase 4 - Multi-drones <a name = "phase4"></a>
 *Implements Multi-agent collaboration in the RL Environment.*
 
+Agents perceive other agents as part of the Environment.
+
+
 -- Coming soon! --
 
 - Inspired by this OpenAI article: https://openai.com/index/emergent-tool-use/
