@@ -156,6 +156,8 @@ https://github.com/user-attachments/assets/e35d074c-5a28-485a-9526-d6802a10aba0
 
 
 
+With Stable Baselines 3's PPO DRL algorithm for 1 million iterations.
+
 <br>
 
 ### Phase 2 - War <a name = "phase2"></a>
@@ -164,6 +166,8 @@ https://github.com/user-attachments/assets/e35d074c-5a28-485a-9526-d6802a10aba0
 https://github.com/user-attachments/assets/24e89f9d-c866-4227-bfee-a8a782edb981
 
 
+
+With Stable Baselines 3's PPO DRL algorithm for 1 million iterations.
 
 <br>
 
@@ -174,6 +178,8 @@ https://github.com/user-attachments/assets/9c652053-fd08-40ae-ba2b-74fca894e1cf
 
 
 
+
+With Stable Baselines 3's PPO DRL algorithm for 1 million iterations.
 
 <br>
 
