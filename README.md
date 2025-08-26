@@ -39,7 +39,7 @@ Finding the best policy for a Reinforcement Learning (RL) agent in a series of d
 
 This project is less on the RL algorithms itself, but more on learning how to design good RL Environments (i.e. design of reward functions, MDP, etc.). The RL Environments in this project are relatively simple, in a grid world style.
 
-The RL Enviornments are all custom made [Gymnasium](https://gymnasium.farama.org/) RL Environments by me, designed as Partially Observable Markov Decision Processes (POMDP), each with their own state space, observation space and reward functions (their action spaces are the same). I used [Stable Baselines 3](https://stable-baselines.readthedocs.io/en/master/index.html)'s Proximal Policy Optimisation (PPO) as the RL algorithm for all the RL Environments.
+The RL Environments are all custom made [Gymnasium](https://gymnasium.farama.org/) RL Environments by me, designed as Partially Observable Markov Decision Processes (POMDP), each with their own state space, observation space and reward functions (their action spaces are the same). I used [Stable Baselines 3](https://stable-baselines.readthedocs.io/en/master/index.html)'s Proximal Policy Optimisation (PPO) as the RL algorithm for all the RL Environments.
 
 **Technology stack used:**
 - Farama Foundation's Gymnasium (https://gymnasium.farama.org/) ([OpenAI Gym's](https://www.gymlibrary.dev/) successor) (used to create the RL Environment)
